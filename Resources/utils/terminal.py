@@ -10,6 +10,7 @@ try:
     from Resources.expdb.nsfw import bypass
     from Resources.expdb.webhook import webf
     from Resources.utils.design import *
+    from Resources.expdb.block import fluff
     from colorama import Fore as coloring
     from geolite2 import geolite2
     import json
@@ -52,25 +53,30 @@ class work:
 -e/-E : To indicate use of exploit.
 --------------------------------------------------
 Terminal Commands: [command name] [extra args]
-Name:    Description:
+
+Name:          Description:
+
 echo  [text]   Displays message in terminal.
 ping [url]     Checks if a site is up and returns it's status code. 
 tcheck [token] Check validity of a Discord token.
-ipinf [IP] Extracts info of a given IPV4.
-help     Displays this help command.
-ascii    Displays OmegaSB ascii art in terminal.
-yes      Prints yes 30 times because yes.
-exit     Terminates script using os.system.
-clear    Removes all text printed in terminal.
+ipinf [IP]     Extracts info of a given IPV4.
+help           Displays this help command.
+ascii          Displays OmegaSB ascii art in terminal.
+yes            Prints yes 30 times because yes.
+exit           Terminates script using os.system.
+clear          Removes all text printed in terminal.
 --------------------------------------------------
 Exploit Commands: -e [command name] [extra args]
-Name:    Description:
-vcdos [dm/gc] [target id] Preforms voice chat denial of service on target.
-unverify [token] Unverifies the email of a user token.
-dos      Preforms an actual denial of service on a target IP address.
-tpass    Gets token from email and password (sometimes).
-nsfw [id] Allows you to get and send messages from and to blocked NSFW channels.
-webdel [url] Deletes a webhook with it's URL.
+
+Name:          Description:
+
+vcdos [dm/gc] [userid] Preforms voice chat denial of service on target.
+unverify [token]       Unverifies the email of a user token.
+dos                    Preforms an actual denial of service on a target IP address.
+tpass                  Gets token from email and password (sometimes).
+nsfw [chanid]          Allows you to get and send messages from and to blocked NSFW channels.
+webdel [url]           Deletes a webhook with it's URL.
+block [userid]         Sends messages to users you have blocked.
           """)
         elif "ping" == self.command[0:4]:
             try:
@@ -142,9 +148,13 @@ webdel [url] Deletes a webhook with it's URL.
             os.system("cls" if os.name == "nt" else "clear")
             skull()
             if "-e vcdos" == self.command[0:8]:
-                choice = self.command[9:11]
-                targer = self.command[11:31]
-                first(choice, targer)
+              choice = self.command[9:11]
+              targer = self.command[11:31]
+              first(choice, targer)
+            elif "-e block" == self.command[0:8]:
+                furk = self.command.split("block ")[1]
+                conte = input(f"{coloring.BLUE} ┗> Enter Message: ")
+                fluff(furk, conte)
             elif "-e unverify" == self.command[0:11]:
                 try:
                     ar = self.command.split("unverify ")[1]

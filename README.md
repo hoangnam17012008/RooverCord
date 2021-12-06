@@ -40,6 +40,10 @@
 ### Bot ToS & Information
 ***
 
+`Customization`
+
+Coders can customize the behavior of the script in ODev/dev.json (If they know what they're doing). In the ODev folder, you can also find the manual.txt file which explains error codes and provides additional info. User customization is in the .env and user.json files. There you can add a password, your token, your preferred name, spam messages, and whether you'd like a custom status to appear upon running the bot. That's all, enjoy! If you have any questions write an issue.
+
 `Errors`
 
 To learn about specific error codes and what they mean, see the notes file in the OSettings folder!
