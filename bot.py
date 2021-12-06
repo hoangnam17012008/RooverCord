@@ -198,6 +198,21 @@ async def tox(ctx, msgid):
         handler(e).efilter()
         break
 ###################################################
+@roover.command(name="Gcleave", description="Leaves all gcs.")
+async def gcleave(ctx):
+  for channel in roover.private_channels:
+    if isinstance(channel, discord.GroupChannel):
+      await channel.leave()
+###################################################
+@roover.command(name="Webjack", description="Spams all guild webooks.")
+async def webjack(ctx):
+  for i in range(30):
+    for w in await ctx.guild.webhooks():
+      try:
+        await w.send(sned)
+      except:
+        pass
+###################################################
 @roover.command(name="Uncache", description="Fully resets the bot and errorcache.")
 @commands.cooldown(1, 30)
 async def uncache(ctx):
@@ -268,7 +283,6 @@ async def guilddm(ctx, serverid, *, mesag):
 @commands.cooldown(1, 13)
 async def clear(ctx):
   async for message in ctx.message.channel.history(limit=None):
-    print(message.content)
     try:
       await message.delete()
     except:

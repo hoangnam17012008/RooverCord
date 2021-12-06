@@ -18,15 +18,15 @@ class bypass:
         print(f"{z['author']['username']}#{z['author']['discriminator']} : {z['content']}")
       time.sleep(9)
     except:
-      print(f"{coloring.RED}「Invalid ID Target Inputted」{coloring.RESET}")
+      print(f"{coloring.RED}「Invalid ID/Token Error」{coloring.RESET}")
 
   def sending(self, cont):
-    try: #roover has otax
+    try:
       h = httpx.post(f"https://discord.com/api/v9/channels/{self.tid}/messages", headers={'authorization':token}, json={'content': cont, 'tts': False})
       if h.status_code == 200 or 204:
         print(f"{coloring.LIGHTGREEN_EX}「Message Sent Successfully」{coloring.RESET}")
       else:
         print(f"{coloring.RED}「Messasge Failed to Send」{coloring.RESET}")
       time.sleep(3)
-    except: #your code sucks ty <3
+    except:
       print(f"{coloring.RED}「Invalid ID Target Inputted」{coloring.RESET}")
