@@ -1,7 +1,7 @@
 ## RooverCordᴸᴵᵀᴱ
 ***
 
-#### A lightweight, fully customizable, Discord exploit injector and SelfBot, created by Roover and Shell.
+#### A lightweight, fully customizable, Discord exploit executor and selfbot, created by Roover and Shell.
 
 ### <p align="center">👹 RooverCord 👹</p>
 ***
