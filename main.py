@@ -85,15 +85,8 @@ if __name__ == '__main__':
   except Exception as e:
     tascii1()
     handler(e).efilter()
-    # Returns here
 ###################################################
 # Dev Notes #
-##################################################
-# Use an ExploitDB format to toggle commands.
-# Errorcache file: Resources/utils/errorcache.txt
-# Basically the efilter function checks if the error is in the error list until it has checked the whole list. The logic behind this is that it wont spam error-cache all the time until the process is done.
-# The loop issue is either in bot.run, or the class. The issue was bot.run because I set token as string which fucked it all.
-# Shit to add:
-# block bypass, follow channel without access.
-# asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy()) solved weird token error.
-# Experiment with threads.
+###################################################
+# NMAP Coming Soon
+# System Info Coming Soon

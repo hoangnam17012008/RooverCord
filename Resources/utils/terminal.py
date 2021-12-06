@@ -77,6 +77,7 @@ tpass                  Gets token from email and password (sometimes).
 nsfw [chanid]          Allows you to get and send messages from and to blocked NSFW channels.
 webdel [url]           Deletes a webhook with it's URL.
 block [userid]         Sends messages to users you have blocked.
+follow [chanid]        Follows channel without even being in the server.
           """)
         elif "ping" == self.command[0:4]:
             try:
@@ -152,9 +153,14 @@ block [userid]         Sends messages to users you have blocked.
               targer = self.command[11:31]
               first(choice, targer)
             elif "-e block" == self.command[0:8]:
+              try:
                 furk = self.command.split("block ")[1]
                 conte = input(f"{coloring.BLUE} ┗> Enter Message: ")
                 fluff(furk, conte)
+              except:
+                print(
+                        f"{coloring.RED}「Command Missing Arguments」{coloring.RESET}"
+                    )       
             elif "-e unverify" == self.command[0:11]:
                 try:
                     ar = self.command.split("unverify ")[1]
@@ -224,4 +230,3 @@ block [userid]         Sends messages to users you have blocked.
             print(
                 f"{coloring.RED}「Invalid Command-line Input」{coloring.RESET}")
             time.sleep(.8)
-# Add pc info

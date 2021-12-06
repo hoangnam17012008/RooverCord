@@ -1,3 +1,0 @@
-cannot import name 'tpass' from 'Resources.expdb.tokentools' (C:\Users\user\Downloads\Scripts\RooverCord\Resources\expdb\tokentools.py)
-cannot import name 'nitro' from 'Resources.expdb.tokentools' (C:\Users\user\Downloads\Scripts\RooverCord\Resources\expdb\tokentools.py)
-name 'col' is not defined

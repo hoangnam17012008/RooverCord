@@ -18,8 +18,6 @@
 - [x] Discord Exploit Toolkit
 * NSFW Restriction Bypass
 * Spoiler Chat Glitch
-* Non-access Channel Follow
-* Image Payload Injector
 * Voice Call Denial of Service
 * Token Unverifier
 * Block Bypass

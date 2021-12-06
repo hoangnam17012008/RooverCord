@@ -56,11 +56,6 @@ intents = discord.Intents().all()
 roover = commands.Bot(self_bot=True, intents=intents, command_prefix=commands.when_mentioned_or(prefix), case_insensitive=True,  strip_after_prefix=True, allowed_mentions=ments)
 token = os.getenv('TOKEN')
 userp = os.getenv('USER')
-"""rme = roover.cached_messages
-  for re in rme:
-    print(re)"""
-#  await roover.close()
-# await reply(content=None) replies and shit w
 ##########################################################
 # Bot Events #
 ##########################################################
