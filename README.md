@@ -1,31 +1,40 @@
-## Omega Selfbot
+## RooverCordᴸᴵᵀᴱ
 ***
 
-#### A powerful, fully customizable, multi-platform support Discord selfbot made by Roover and Shell. The bot is very unique and potentially the strongest public selfbot ever released featuring exploits, nukes, and bot farms for the million user platform...
+#### A lightweight, fully customizable, Discord exploit injector and SelfBot, created by Roover and Shell.
 
-### <p align="center">👹 Omega Utilities 👹</p>
+### <p align="center">👹 RooverCord 👹</p>
 ***
 <p align="center">
-   <img src="https://media.discordapp.net/attachments/897281521323503627/908052522537717790/unknown.png?width=369&amp;height=335", >
+   <img src="https://images-ext-2.discordapp.net/external/1Fp_PHWTVbNPArWSuc4aTPMM3kehOTY-AtO1kOPsM3U/https/media.discordapp.net/attachments/914991373508288514/917242534021955625/unknown.png", >
 </p>
 <hr>
 
 #### Important Info: 
-###### Version: 1.0 | Developer Discord ID: 876345697056751618 | 
+###### Version: Lite | Developer Discord ID: 902290188858978305 | 
 
-`~ Notable Changes ~`
+`~ Notable Features ~`
 
 - [x] Discord Exploit Toolkit
 * NSFW Restriction Bypass
 * Spoiler Chat Glitch
-* Channel Follow Without Access
+* Non-access Channel Follow
+* Image Payload Injector
+* Voice Call Denial of Service
+* Token Unverifier
+* Block Bypass
 
-- [x] New Destruction Commands 
+- [x] Destruction Commands 
 * WebJack 
-* Improved Nuker
-* Token Furnace
-* Token Bruteforce (Luck)
-* Nitro Bruteforce (Luck)
+* Nuker
+* Token Bruteforce
+* Nitro Bruteforce
+* API Mass-Report
+
+- [x] Miscellaneous
+* Denial of Service
+* Server Pinger
+* PYNmap Tools
 
 ***
 ### Bot ToS & Information
@@ -43,5 +52,3 @@ To learn about specific error codes and what they mean, see the notes file in th
 2. It is important to also note that SelfBots are strictly against Discord ToS, and any actions taken against your account aren't my fault. You have been warned.
 ##
 3. Lastly, and most importantly, any damage done to the script by editing is your fault and not my problem. Unless there is an issue with the original script, don't DM me.
-
-###### Image here
