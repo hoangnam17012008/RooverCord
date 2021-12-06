@@ -44,11 +44,8 @@ try:
   os.system("cls" if os.name == "nt" else "clear")
   now = datetime.now()
   current_time = now.strftime("%H:%M:%S")
-  try:
+  if sys.platform == "win32":
       os.system(f'title RooverCord : {current_time}')
-  except:
-      with open("Resources/utils/data/errorcache.txt", "a+") as shgah:
-        shgah.write("Unsupported Platform for OS System Title\n")
 except Exception as e:
   handler(e).efilter()
   os._exit(1)
@@ -97,6 +94,6 @@ if __name__ == '__main__':
 # Basically the efilter function checks if the error is in the error list until it has checked the whole list. The logic behind this is that it wont spam error-cache all the time until the process is done.
 # The loop issue is either in bot.run, or the class. The issue was bot.run because I set token as string which fucked it all.
 # Shit to add:
-# spoiler glitch,block bypass, chat blocker, NSFW bypass, webjack, follow channel without access.
+# block bypass, follow channel without access.
 # asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy()) solved weird token error.
 # Experiment with threads.
