@@ -503,6 +503,22 @@ async def massdm(ctx, *, message):
     except:
       pass
 
+@roover.command(name="Tping", description="Sends a 'everyone' ping even if permission is disabled.")
+async def tping(ctx):
+  if len(ctx.guild.members) > 20:
+    em = discord.Embed(title=f"An Error Has Occurred:", description=f"Server too big to execute.")
+    em.set_footer(text="𝗠𝗮𝗱𝗲 𝗯𝘆 𝗥𝗼𝗼𝘃𝗲𝗿")
+    em.set_author(name=f"{roover.user.name}", icon_url=f"{roover.user.avatar_url}")
+    await ctx.send(embed=em, delete_after=10)
+  else:
+    for member in ctx.guild.members:
+      pass
+
+@roover.command(name="Rping", description="Tries to ping every server role.")
+async def rping(ctx):
+  for role in ctx.guild.roles:
+    the = "".join(role.id)
+
 @roover.command(name="Sex", description="Fucking stupid shit Shell added.")
 async def sex(ctx):
   await ctx.message.delete()
