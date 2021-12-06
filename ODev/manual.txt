@@ -1,0 +1,21 @@
+.---. .----..----..-..-..---..---. 
+| |-< | || || || | \  / | |- | |-< 
+`-'`-'`----'`----'  `'  `---'`-'`-'
+-----------------------------------
+Are you a programmer or developer? Do you want to edit the script's behavior during testing? If so, I've added some basic configurations which you can add on to for a better testing environment. Check them out in dev.json and read the notes below!
+###################################################
+
+1. If you stumble upon any uncaught errors in the     script, add them to the list on line 11 of         Resources/utils/handling, and write an issue on    the github.
+
+2. If an error is "cached" it's appended to the       errorcache.txt file in the Resources/utils         folder.
+
+EXIT CODES:
+
+1 - Failed to import neccessary modules.
+2 - Unsupported platform in use.
+3 - Invalid token.
+4 - Invalid dev/user input.
+5 - Shits fucked yo (Selfbot unrerponsive).
+6 - User prompted exit.
+7 - Invalid exploit config.
+8 - Maximum password attempts reached.
