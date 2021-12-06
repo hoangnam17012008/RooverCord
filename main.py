@@ -19,23 +19,6 @@ import sys
 ###################################################
 def warn(*args, **kwargs):
   pass
-
-def clearing():
-    if  sys.platform == "linux":
-      os.system('clear')
-    elif sys.platform == "linux2":
-      os.system('clear')
-    elif sys.platform == "win32":
-      os.system('cls')
-    elif sys.platform == "darwin":
-      os.system('clear')
-    elif sys.platform == "cygwin":
-      os.system('cls') 
-    else:
-      print(f"{coloring.RED}<===== [Unsupported Platform] =====>")
-      print(sys.platform)
-      os._exit(1)
-
 with open('ODev/dev.json') as devjs:
     devjson = json.load(devjs)
     pycache = devjson.get('caching')
@@ -44,7 +27,7 @@ with open('ODev/dev.json') as devjs:
     elif str(pycache) == "false":
       sys.dont_write_bytecode = True
     else:
-      clearing()
+      os.system("cls" if os.name == "nt" else "clear")
       print(f"\nCritical error encountered. Invalid dev input entered. \nUnless you know exactly what you're doing, don't edit dev.json.\nOtherwise, your input values should be true or false. \nBe sure to also read the manual.txt file for more info.")
       os._exit(4)
 ###################################################
@@ -58,7 +41,7 @@ try:
   if sys.platform == "win32":
     from dotenv import load_dotenv
     load_dotenv()
-  clearing()
+  os.system("cls" if os.name == "nt" else "clear")
   now = datetime.now()
   current_time = now.strftime("%H:%M:%S")
   try:
@@ -92,7 +75,7 @@ if __name__ == '__main__':
 └─{coloring.MAGENTA}${coloring.WHITE}: """, stream=None)
     if verify == os.getenv('PASSWORD'):
       print(f"{coloring.BLUE}─────────────────────────────")
-      clearing()
+      os.system("cls" if os.name == "nt" else "clear")
       break
     elif tried == 2:
       os._exit(8)
@@ -114,11 +97,6 @@ if __name__ == '__main__':
 # Basically the efilter function checks if the error is in the error list until it has checked the whole list. The logic behind this is that it wont spam error-cache all the time until the process is done.
 # The loop issue is either in bot.run, or the class. The issue was bot.run because I set token as string which fucked it all.
 # Shit to add:
-# Emoji crasher, spoiler glitch, vc raper, mass report, block bypass, chat blocker, NSFW bypass, webjack, follow channel without access.
-# python -B main.py disabled pycache
-# Run.bat file configuration
+# spoiler glitch,block bypass, chat blocker, NSFW bypass, webjack, follow channel without access.
 # asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy()) solved weird token error.
-# Add actual reporting that works. 
-# g
 # Experiment with threads.
-# Error with tpass is it isn't ok with new login location.
