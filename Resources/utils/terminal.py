@@ -77,7 +77,6 @@ tpass                  Gets token from email and password (sometimes).
 nsfw [chanid]          Allows you to get and send messages from and to blocked NSFW channels.
 webdel [url]           Deletes a webhook with it's URL.
 block [userid]         Sends messages to users you have blocked.
-follow [chanid]        Follows channel without even being in the server.
           """)
         elif "ping" == self.command[0:4]:
             try:
