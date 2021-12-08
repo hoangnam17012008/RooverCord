@@ -37,6 +37,9 @@
 ***
 ### Bot ToS & Information
 ***
+`Run`
+
+Download the script, and download Python (https://www.python.org/downloads/). Open cmd prompt, and cd to the spot where the script was saved. Eg. cd downloads/scripts/roovercord. Then do python main.py to begin. Remember to add your token, username, and password to the .env file via any code editor.
 
 `Customization`
 
