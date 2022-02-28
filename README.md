@@ -1,6 +1,6 @@
 ## RooverCordᴸᴵᵀᴱ | OUTDATED RELEASING UPDATED VESION SOON.
 ***
-
+#### I strongly suggest you not to download this script, it is now outdated due to Discord api changes. Unless you can actually code and fix it I wouldn't install.
 #### A lightweight, fully customizable, Discord exploit executor and selfbot, created by Roover and Shell.
 
 ### <p align="center">👹 RooverCord 👹</p>
